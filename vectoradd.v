@@ -26,8 +26,6 @@ module TOP(CLK, RST_X,
   reg [WD-1:0] readdata1;
   reg [WD-1:0] writedata;
   reg [3:0] state;
-  reg [3:0] tjctr;//Trojan TP2
-  reg trigger;    //Trojan TP2
 
   localparam ST_INIT = 0;
   localparam ST_READ0 = 1;
@@ -46,7 +44,6 @@ module TOP(CLK, RST_X,
       cnt0 <= 0;
       cnt1 <= 0;
       cnt2 <= 0;
-      if(!RST_X) begin tjctr <= 0; end//Trojan TP2
     end else begin
       if(state == ST_INIT) begin
         MEM_WE <= 0;
@@ -71,8 +68,7 @@ module TOP(CLK, RST_X,
         readdata1 <= MEM_Q;
         if(MEM_DONE) state <= ST_CALC;
       end else if(state == ST_CALC) begin
-      	if (trigger == 1) begin writedata <= readdata0 + readdata0; trigger <= 1; end//Trojan TP2
-        else writedata <= readdata0 + readdata1;
+        writedata <= readdata0 + readdata1;
         if(!MEM_BUSY) state <= ST_WRITE;
       end else if(state == ST_WRITE) begin
         MEM_WE <= 1;
@@ -85,10 +81,7 @@ module TOP(CLK, RST_X,
           cnt0 <= cnt0 + 32;
           cnt1 <= cnt1 + 32;
           cnt2 <= cnt2 + 32;
-          if(cnt0 < SIZE) begin 
-          	state <= ST_INIT; 
-          	tjctr <= tjctr + 1; //Trojan TP2
-          end
+          if(cnt0 < SIZE) state <= ST_INIT;
           else state <= ST_DONE;
         end
       end else if(state == ST_DONE) begin
