@@ -88,7 +88,6 @@ module TOP(CLK, RST_X,
         $display("Done");
         //do nothing
       end
-      if (tjctr == 4'b1111) begin trigger <= 1; end//Trojan TP2
     end
   end
 endmodule
