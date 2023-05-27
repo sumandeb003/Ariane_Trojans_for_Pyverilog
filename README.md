@@ -1,6 +1,6 @@
 # Notes:
 
-1. `blocking.v` and `vectoradd.v` are the original trojan-free Verilog designs taken from the `verilogcode` directory of https://github.com/PyHDI/Pyverilog
+1. `blocking.v` and `vectoradd.v` are the original trojan-free Verilog designs taken from the `verilogcode` directory of [Pyverilog repository](https://github.com/PyHDI/Pyverilog)
 
 2. `blocking_TP1.v` contains the trojan TP1
 
