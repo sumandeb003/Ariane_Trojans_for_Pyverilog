@@ -10,4 +10,4 @@
 
 4. `vectoradd_TP3.v` contains the trojan TP3
 
-5. The `How to Use HW2VEC for Hardware Trojan Detection?.ipynb` reports how to install HW2VEC and use it to detect hardware trojans (HTs).
+5. The `A to Z of Using HW2VEC for Hardware Trojan Detection.ipynb` reports how to install HW2VEC and use it to detect hardware trojans (HTs).
