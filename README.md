@@ -4,7 +4,7 @@
 
 2. `blocking_TP1.v` contains the trojan type TP1 (DoS)
 
-3. `vectoradd_TP1.v` contains the trojan type TP1
+3. `vectoradd_TP1.v` contains the trojan type TP1 (DoS)
 
 3. `vectoradd_TP2.v` contains the trojan type TP2
 
