@@ -8,6 +8,6 @@
 
 3. `vectoradd_TP2.v` contains the trojan type TP2 (Data Corruption)
 
-4. `vectoradd_TP3.v` contains the trojan type TP3
+4. `vectoradd_TP3.v` contains the trojan type TP3 (Address Manipulation)
 
 5. The `A to Z of Using HW2VEC for Hardware Trojan Detection.ipynb` file mentions how I installed HW2VEC and used it for detecting hardware trojans (HTs). It refers to the file `use_case_2.py` in this repository.
