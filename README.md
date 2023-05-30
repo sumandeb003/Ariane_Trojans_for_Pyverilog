@@ -6,7 +6,7 @@
 
 3. `vectoradd_TP1.v` contains the trojan type TP1 (DoS)
 
-3. `vectoradd_TP2.v` contains the trojan type TP2
+3. `vectoradd_TP2.v` contains the trojan type TP2 (Data Corruption)
 
 4. `vectoradd_TP3.v` contains the trojan type TP3
 
