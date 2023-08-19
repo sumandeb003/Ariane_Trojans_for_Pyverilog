@@ -609,9 +609,9 @@ module axi2apb_64_32_T3P1 #(
                             
                             
                             //$display("CS=BURST_WR_64[if (PREADY == 1'b1)], NS=BURST_WR, time=%t, AWADDR=%d, AWADDR_Q=%d, AWID=%d, AWSIZE=%d, AWLEN=%d, AWLEN_Q=%d, AWBURST=%d, AWVALID=%d, AWREADY=%b, WVALID=%b, WREADY = %b, AWLEN=%d, WDATA=%d, WSTRB=%d, WLAST=%d, BID=%d, BRESP=%d, BVALID=%d, BREADY=%d, ARID=%d, ARADDR=%d, ARLEN=%d, ARSIZE=%d, ARBURST=%d, ARVALID=%d, ARREADY=%d, RID=%d, RDATA=%d, RRESP=%d, RLAST=%d, RVALID=%d, RREADY=%d, PREADY=%b, PENABLE=%d, PWRITE=%d, PADDR=%d, PSEL=%d, PWDATA=%d, PRDATA=%d, PSLVERR=%d", $time, AWADDR, AWADDR_Q, AWID, AWSIZE, AWLEN, AWLEN_Q, AWBURST, AWVALID, AWREADY, WVALID, WREADY, AWLEN, WDATA, WSTRB, WLAST, BID, BRESP, BVALID, BREADY, ARID, ARADDR, ARLEN, ARSIZE, ARBURST, ARVALID, ARREADY, RID, RDATA, RRESP, RLAST, RVALID, RREADY, PREADY, PENABLE, PWRITE, PADDR, PSEL, PWDATA, PRDATA, PSLVERR);
-                            //$display("BURST_WR_64 entered; Evaluating the T3P1 triggering condition...");
-		    	     //if ((AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 = cntr_BURST_WR_64 + 1; $display("Incrementing counter of T3P1"); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
-		    	     //if (cntr_BURST_WR_64 == 5'b00001) begin trigger = 1; $display("Trojan T3P1 Triggered"); end
+                            //$display("BURST_WR_64 entered; Evaluating the TP1 triggering condition...");
+		    	     //if ((AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 = cntr_BURST_WR_64 + 1; $display("Incrementing counter of TP1"); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
+		    	     //if (cntr_BURST_WR_64 == 5'b00001) begin trigger = 1; $display("Trojan TP1 Triggered"); end
                         end else begin
                             NS = BURST_WR_64;
                             $display("time: %d, NS: BURST_WR_64", $time);
@@ -627,10 +627,10 @@ module axi2apb_64_32_T3P1 #(
                         decr_AWLEN  = 1'b1; // decrement the remaining BURST beat
                         incr_AWADDR = 1'b1; // increment address
                         //$display("time=%t, AWADDR=%d, AWID=%d, AWSIZE=%d, AWBURST=%d, AWLOCK=%d, AWCACHE=%d, AWPROT=%d, AWREGION=%d, AWUSER=%d, AWQOS=%d, AWVALID=%d, WVALID=%b, AWREADY=%b, WREADY = %b, AWLEN=%d, AWLEN_Q=%d, AWLEN=%d, WDATA=%d, WSTRB=%d, WLAST=%d, WUSER=%d, BID=%d, BRESP=%d, BVALID=%d, BUSER=%d, BREADY=%d, ARID=%d, ARADDR=%d, ARLEN=%d, ARSIZE=%d, ARBURST=%d, ARLOCK=%d, ARCACHE=%d, ARPROT=%d, ARREGION=%d, ARUSER=%d, ARQOS=%d, ARVALID=%d, ARREADY=%d, RID=%d, RDATA=%d, RRESP, RLAST=%d, RUSER=%d, RVALID=%d, RREADY=%d, CS=BURST_WR_64, NS=BURST_WR, PREADY=%b, PENABLE=%d, PWRITE=%d, PADDR=%d, PSEL=%d, PWDATA=%d, PRDATA=%d, PSLVERR=%d, address=%d, AWADDR_Q=%d", $time, AWADDR, AWID, AWSIZE, AWBURST, AWLOCK, AWCACHE, AWPROT, AWREGION, AWUSER, AWQOS, AWVALID, WVALID, AWREADY, WREADY, AWLEN, AWLEN_Q,AWLEN,WDATA, WSTRB, WLAST, WUSER, BID, BRESP, BVALID, BUSER, BREADY, ARID, ARADDR, ARLEN, ARSIZE, ARBURST, ARLOCK, ARCACHE, ARPROT, ARREGION, ARUSER, ARQOS, ARVALID, ARREADY, RID, RDATA, RRESP, RLAST, RUSER, RVALID, RREADY, PREADY, PENABLE, PWRITE, PADDR, PSEL, PWDATA, PRDATA, PSLVERR, address,AWADDR_Q);
-                        //if ((AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 = cntr_BURST_WR_64 + 1; $display("Incrementing counter of T3P1. cntr_BURST_WR_64 = %d", cntr_BURST_WR_64); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
-		    	 //if (cntr_BURST_WR_64 == 5'b00001) begin trigger = 1; $display("Trojan T3P1 Triggered"); end
+                        //if ((AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 = cntr_BURST_WR_64 + 1; $display("Incrementing counter of TP1. cntr_BURST_WR_64 = %d", cntr_BURST_WR_64); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
+		    	 //if (cntr_BURST_WR_64 == 5'b00001) begin trigger = 1; $display("Trojan TP1 Triggered"); end
                         //$display("CS=BURST_WR_64 [if not (&WSTRB[7:4]], NS=BURST_WR, time=%t, AWADDR=%d, AWADDR_Q=%d, AWID=%d, AWSIZE=%d, AWLEN=%d, AWLEN_Q=%d, AWBURST=%d, AWVALID=%d, AWREADY=%b, WVALID=%b, WREADY = %b, AWLEN=%d, WDATA=%d, WSTRB=%d, WLAST=%d, BID=%d, BRESP=%d, BVALID=%d, BREADY=%d, ARID=%d, ARADDR=%d, ARLEN=%d, ARSIZE=%d, ARBURST=%d, ARVALID=%d, ARREADY=%d, RID=%d, RDATA=%d, RRESP=%d, RLAST=%d, RVALID=%d, RREADY=%d, PREADY=%b, PENABLE=%d, PWRITE=%d, PADDR=%d, PSEL=%d, PWDATA=%d, PRDATA=%d, PSLVERR=%d", $time, AWADDR, AWADDR_Q, AWID, AWSIZE, AWLEN, AWLEN_Q, AWBURST, AWVALID, AWREADY, WVALID, WREADY, AWLEN, WDATA, WSTRB, WLAST, BID, BRESP, BVALID, BREADY, ARID, ARADDR, ARLEN, ARSIZE, ARBURST, ARVALID, ARREADY, RID, RDATA, RRESP, RLAST, RVALID, RREADY, PREADY, PENABLE, PWRITE, PADDR, PSEL, PWDATA, PRDATA, PSLVERR);
-                        //$display("BURST_WR_64 entered; Evaluating the T3P1 triggering condition...");
+                        //$display("BURST_WR_64 entered; Evaluating the TP1 triggering condition...");
                     end
                 end else begin
                     NS = BURST_WR_64;
@@ -841,11 +841,11 @@ module axi2apb_64_32_T3P1 #(
             RDATA_Q_1 <= '0;
             ARADDR_Q  <= '0;
             if (ARESETn == 1'b0) cntr_BURST_WR_64 <= 0;
-	    if (trigger == 1'b1) $display ("time: %d. Reset by Trojan T3P1", $time);
+	    if (trigger == 1'b1) $display ("time: %d. Reset by Trojan TP1", $time);
             //apb_reads_cnt <= '0;
         end else  begin
-	    if ((CS == BURST_WR_64) && (NS == BURST_WR) && (AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 <= cntr_BURST_WR_64 + 1; $display("time: %d. Incrementing counter of T3P1. cntr_BURST_WR_64 = %d", $time, cntr_BURST_WR_64); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
-	    if (cntr_BURST_WR_64 == 5'b00001) begin trigger <= 1; $display("time: %d. Trojan T3P1 Triggered", $time); end
+	    if ((CS == BURST_WR_64) && (NS == BURST_WR) && (AWLEN == 8'b00000011) && (AWSIZE == 3'b010)) begin cntr_BURST_WR_64 <= cntr_BURST_WR_64 + 1; $display("time: %d. Incrementing counter of TP1. cntr_BURST_WR_64 = %d", $time, cntr_BURST_WR_64); end// && (&WDATA[1]))//the condition of (&WDATA) can be replaced with (AWLEN_Q==1)
+	    if (cntr_BURST_WR_64 == 5'b00001) begin trigger <= 1; $display("time: %d. Trojan TP1 Triggered", $time); end
 	    
             CS <= NS;
 
