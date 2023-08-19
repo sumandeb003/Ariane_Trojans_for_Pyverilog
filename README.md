@@ -15,4 +15,4 @@
 
 7. If you use any of these trojans in your work, kindly cite the following paper:
 
-Suman Deb, Anupam Chattopadhyay, Avi Mendelson. *A RISC-V SoC with Hardware Trojans: Case Study on Trojan-ing the On-Chip Protocol Conversion*. 31st IFIP/IEEE Conference on Very Large Scale Integration and System-on-Chip (VLSI-SoC), 2023. 
+Suman Deb, Anupam Chattopadhyay, Avi Mendelson. ***A RISC-V SoC with Hardware Trojans: Case Study on Trojan-ing the On-Chip Protocol Conversion***. 31st IFIP/IEEE Conference on Very Large Scale Integration and System-on-Chip (VLSI-SoC), 2023. 
