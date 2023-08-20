@@ -11,7 +11,7 @@
 4. `vectoradd_TP3.v` contains the trojan type TP3 (Address Manipulation)
 
 5. The `A to Z of Using HW2VEC for Hardware Trojan Detection.ipynb` file mentions how I installed HW2VEC and used it for detecting hardware trojans (HTs). It refers to the file `use_case_2.py` in this repository.
-6. **The directories `axi2apb_TP1`, `axi2apb_TP2`, and `axi2apb_TP3` contain the original trojans TP1, TP2 and TP3, respectively, inserted in the AXI-to-APB conversion module of the RISC-V-based Ariane SoC**. The original codebase of the Ariane SoC can be found [here](http://www.github.com/lowRISC/ariane).
+6. **The directories `axi2apb_TP1`, `axi2apb_TP2`, and `axi2apb_TP3` contain the original trojans TP1, TP2 and TP3, respectively, inserted in the AXI-to-APB conversion module of the RISC-V-based Ariane SoC**. The original codebase of the Ariane SoC can be found [here](http://www.github.com/lowRISC/ariane). In the Ariane codebase, you can navigate to the original trojan-free AXI-to-APB module as: `ariane/fpga/src/[axi2apb](https://github.com/pulp-platform/axi2apb/tree/53e7b9f1b16e3f4d4aadc8fbf880d05879f54fe8)/src/axi2apb_64_32.sv` 
 
 7. If you use any of these SoC-level trojans in your work, kindly cite the following paper:
 
